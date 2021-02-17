@@ -224,7 +224,6 @@ function auth(event){
     let answer;
     xhr.onload = () => {
         answer = JSON.parse(xhr.response)
-        console.log(answer);
         let a = false;
 
         for (let key of answer){
