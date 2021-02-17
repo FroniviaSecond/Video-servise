@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Видеосервис</title>
+    <link rel="stylesheet" href="./fonts.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!--Модальное окно-->
+    <div class="modal-window_wrapper hidden">
+        <form class="login-window" id="form">
+            <div class="login-window__title">Вход</div>
+            <input class="login-window__input" id="login-input" placeholder="Логин">
+            <input type='password' class="login-window__input" id='password-input' placeholder="Пароль">
+            <div class="login-window__checkbox">
+                <label class="label">
+                    <input type="checkbox" class="checkbox">
+                    <span class="fake"></span>
+                    <span class="text">Запомнить</span>
+                </label>
+            </div>
+            <button type="submit" class="login-window__button">Войти</button>
+        </form>
+    </div>
+<!--Шапка сайта -->
+    <header class="header">
+        <div class="header-logo">
+            <img class="header-logo__icon" src="assets/sign.svg" alt="Video service logotype">
+            <a><h1 class="header-logo__title">Видеосервис</h1></a>
+        </div>
+        <fieldset class="header-search">
+            <input class="header-search__input" type="text" placeholder="Поиск...">
+            <button class="header-search__button" type="button">Найти</button>
+        </fieldset>
+        <div class="header-username hidden"></div>
+        <input type="text" class="header-username-input hidden">
+        <button class="header-login">Войти</button>
+        <button class="header-logout hidden">Выйти</button>
+    </header>
+<!--Основное содержимое сайта-->
+    <main class="main">
+<!--        Табы-->
+        <div class="menu">
+            <button class="menu__tab menu__tab_active" id="films-tab">Фильмы</button>
+            <button class="menu__tab" id="tv-channels-tab">Телеканалы</button>
+        </div>
+<!--        Раздел "Кино"-->
+        <section class="movies" id="movies">
+            <h2 class="movies__title"><img src="assets/fire.png" class="fire_icon" alt="fire smile"> Новинки</h2>
+            <ul class="movies__list">
+                <li class="movies-card">
+                    <img src="assets/poster_one.png" class="movies-card__img" alt="Сartoon in the cinema poster">
+                    <a href="#" target="_blank" class="movies-card__description_a">
+                        <p class="movies-card__description">
+                        В новом выпуске ми-ми-мишки изобретут машину сна, а Дракоша Тоша научит завязывать шнурки.
+                        </p>
+                    </a>
+                    <h3 class="movies-card__title">Мульт в кино. Выпуск №103. Некогда грустить!</h3>
+                </li>
+                <li class="movies-card">
+                    <img src="assets/poster_two.png" class="movies-card__img" alt="Batman poster">
+                    <a href="#" target="_blank" class="movies-card__description_a">
+                        <p class="movies-card__description">
+                        Бэтмен поднимает ставки в войне с криминалом. С помощью лейтенанта Джима Гордона и прокурора Харви Дента он намерен очистить улицы Готэма от преступности. Сотрудничество оказывается эффективным, но скоро они обнаружат себя посреди хаоса, развязанного восходящим криминальным гением, известным напуганным горожанам под именем Джокер.
+                        </p>
+                    </a>
+                    <h3 class="movies-card__title">Новый Бэтмен</h3>
+                </li>
+                <li class="movies-card">
+                    <img src="assets/poster_three.png" class="movies-card__img" alt="Once Upon a Time in Hollywood poster">
+                    <a href="#" target="_blank" class="movies-card__description_a">
+                        <p class="movies-card__description">
+                        Фильм повествует о череде событий, произошедших в Голливуде в 1969 году, на закате его «золотого века». Известный актер Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.
+                        </p>
+                    </a>
+                    <h3 class="movies-card__title">Однажды... в Голливуде</h3>
+                </li>
+                <li class="movies-card">
+                    <img src="assets/poster_four.png" class="movies-card__img"  alt="Hustlers poster">
+                    <a href="#" target="_blank" class="movies-card__description_a">
+                        <p class="movies-card__description">
+                        Танцовщицы элитного стриптиз-клуба, клиенты которого - известные финансисты с Уолл-Стрит - привыкли к большим заработкам и роскошной жизни. Но после финансового кризиса 2008 года посетителей в клубе заметно поубавилось, и деньги к девушкам уже не текут рекой. Тяжёлые времена требуют отчаянных мер, и бывшие танцовщицы решаются на авантюрный шаг.
+                        </p>
+                    </a>
+                    <h3 class="movies-card__title">Стриптизёрши</h3>
+                </li>
+            </ul>
+        </section>
+<!--Раздел жанры -->
+        <section class="genres" id="genres">
+            <h2 class="genres__title">Жанры</h2>
+            <ul class="genres__list">
+                <li class="genres-card">
+                    <a href="#" target="_blank" class="genres-card_a">
+                        <div class="genres-card__background genres-card__background_comedy"></div>
+                        <img src="assets/comedy_icon.svg" class="genres-card__icon" alt="Happy smile">
+                        <h3 class="genres-card__title">Комедии</h3>
+                    </a>
+                </li>
+                <li class="genres-card">
+                    <a href="#" target="_blank" class="genres-card_a">
+                        <div class="genres-card__background genres-card__background_drama"></div>
+                        <img src="assets/drama_icon.svg" class="genres-card__icon" alt="Sad smile">
+                        <h3 class="genres-card__title">Драмы</h3>
+                    </a>
+                </li>
+                <li class="genres-card">
+                    <a href="#" target="_blank" class="genres-card_a">
+                        <div class="genres-card__background genres-card__background_fantasy"></div>
+                        <img src="assets/fantasy_icon.svg" class="genres-card__icon" alt="UFO smile">
+                        <h3 class="genres-card__title">Фантастика</h3>
+                    </a>
+                </li>
+                <li class="genres-card">
+                    <a href="#" target="_blank" class="genres-card_a">
+                        <div class="genres-card__background genres-card__background_horror"></div>
+                        <img src="assets/horror_icon.svg" class="genres-card__icon" alt="Ghost smile">
+                        <h3 class="genres-card__title">Ужасы</h3>
+                    </a>
+                </li>
+            </ul>
+        </section>
+<!--        Обёртка для создания скроллбара-->
+        <div class="tv_schedule_container hidden" data-control="wheel">
+            <div class="viewport-wrapper">
+                <div class="viewport">
+                    <div class="content">
+<!--                        Раздел "Телешоу"-->
+                        <section class="tv-schedule">
+                            <div class="tv-schedule__card">
+                                <div class="program-logotype">
+                                    <img src="assets/first_channel.svg" class= 'img' alt="First channel logotype">
+                                </div>
+                                <div class="program-schedule">
+                                    <h3 class="program-schedule__channel-title">Первый канал</h3>
+                                    <p class="program-schedule__show-date program-schedule__show-date_first"><span class="program-schedule__show-date_time">13:00</span><span>   Новости (с субтитрами)</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">14:00</span><span>  Давай поженимся</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">15:00</span><span>   Другие новости</span></p>
+                                </div>
+                            </div>
+                            <div class="tv-schedule__card">
+                                <div class="program-logotype">
+                                    <img src="assets/2x2.png" class= 'img'  alt="2x2 logotype">
+                                </div>
+                                <div class="program-schedule">
+                                    <h3 class="program-schedule__channel-title">2x2</h3>
+                                    <p class="program-schedule__show-date program-schedule__show-date_first"><span class="program-schedule__show-date_time">13:00</span><span>   МУЛЬТ ТВ. Сезон 4, 7 серия</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">14:00</span><span>   ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон 7, 7 серия</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">15:00</span><span>   БУРДАШЕВ. Сезон 1, 20 серия</span></p>
+                                </div>
+                            </div>
+                            <div class="tv-schedule__card">
+                                <div class="program-logotype">
+                                    <img src="assets/rbc.png" class= 'img'  alt="RBC logotype">
+                                </div>
+                                <div class="program-schedule">
+                                    <h3 class="program-schedule__channel-title">РБК</h3>
+                                    <p class="program-schedule__show-date program-schedule__show-date_first"><span class="program-schedule__show-date_time">13:00</span><span>   ДЕНЬ. Горючая смесь: как бороться с суррогатом на АЗС</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">14:00</span><span>  ДЕНЬ. Главные темы</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">15:00</span><span>   Главные новости</span></p>
+                                </div>
+                            </div>
+                            <div class="tv-schedule__card">
+                                <div class="program-logotype">
+                                    <img src="assets/amedia.png" class= 'img'  alt="Amedia logotype">
+                                </div>
+                                <div class="program-schedule">
+                                    <h3 class="program-schedule__channel-title">AMEDIA PREMIUM</h3>
+                                    <p class="program-schedule__show-date program-schedule__show-date_first"><span class="program-schedule__show-date_time">13:00</span><span>   Клиент всегда мёртв</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">14:00</span><span>  Голодные игры: Сойка-пересмешница. Часть I</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">15:00</span><span>   Секс в большом городе</span></p>
+                                </div>
+                            </div>
+                            <div class="tv-schedule__card">
+                                <div class="program-logotype">
+                                    <img src="assets/amedia.png" class= 'img'  alt="Amedia logotype">
+                                </div>
+                                <div class="program-schedule">
+                                    <h3 class="program-schedule__channel-title">AMEDIA PREMIUM</h3>
+                                    <p class="program-schedule__show-date program-schedule__show-date_first"><span class="program-schedule__show-date_time">13:00</span><span>   Клиент всегда мёртв</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">14:00</span><span>  Голодные игры: Сойка-пересмешница. Часть I</span></p>
+                                    <p class="program-schedule__show-date"><span class="program-schedule__show-date_time">15:00</span><span>   Секс в большом городе</span></p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<!--Подвал Сайта-->
+    <footer class="footer">
+        <div class="footer-container">
+            <img src="assets/logotype.svg" class="footer__logo" alt="HTC logotype">
+            <address class="footer-content">
+                <p class="footer-content__info footer-content__info_address">426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)</p>
+                <p class="footer-content__info footer-content__info_tel"><a class='' href="tel:+73412938861">+7 (3412) 93-88-61</a>, <a href="tel:432929">43-29-29</a></p>
+                <p class="footer-content__info footer-content__info_site"><a href="http://htc-cs.ru" target="_blank">htc-cs.ru</a></p>
+            </address>
+        </div>
+    </footer>
+
+<!--Подключаем скрипт, содержащий в себе всю логику приложения и полифилы для работы в ie 11-->
+    <script src="./bundle.js"></script>
+</body>
+</html>

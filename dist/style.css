@@ -1,0 +1,943 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Rubik', sans-serif;
+}
+*:before,
+*:after{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body{
+    position:relative;
+    min-height: 100vh;
+    padding-bottom: 192px;
+}
+
+a{
+    cursor: pointer;
+}
+
+.header{
+    width: 1180px;
+    height: 40px;
+    margin: 32px auto 0;
+
+    display: flex;
+    align-items: center;
+}
+
+.header-logo{
+    height: 36px;
+    width: 182px;
+
+    align-items: center;
+    display: flex;
+}
+
+.header-logo__icon{
+    height: 36px;
+    width: 36.15px;
+}
+
+.header-logo__title{
+    height: 24px;
+    width: 134px;
+    margin-left: 11px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+}
+
+.header-search{
+    display: flex;
+    align-items: center;
+
+    width: 402px;
+    height: 25px;
+    margin-left: 207px;
+
+    border:none;
+    outline:none;
+}
+
+.header-search__input{
+    width: 320px;
+
+    border:none;
+    border-bottom: 1px solid #333333;
+    outline: none;
+}
+
+.header-search__input{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+
+    margin-top: 7px;
+    padding-bottom: 6px;
+}
+
+.header-search__input::placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #828282;
+}
+
+.header-search__button{
+    width: 50px;
+    height: 19px;
+    margin-left: 32px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #E5261E;
+    background-color: white;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+}
+
+.header-login{
+    width: 113px;
+    height: 38px;
+    margin-left: 276px;
+    margin-top: 6px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #E5261E;
+
+    border: none;
+    outline: none;
+    border-radius: 4px;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.header-login:hover{
+    background: #CC221B;
+    border-radius: 4px;
+}
+
+.header-logout{
+    margin-left: 16px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #E5261E;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #FFFFFF;
+}
+
+.header-username{
+    width: 301px;
+    height: 19px;
+    margin-left: 20px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    color: #333333;
+}
+
+.header-username-input{
+    width: 320px;
+    height: 25px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    color: #333333;
+
+    border: none;
+    outline: none;
+}
+
+/*main*/
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 44px
+}
+
+.menu__tab{
+    position: relative;
+    margin: 0 12px;
+    padding-bottom: 12px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: right;
+    color: #333333;
+    background-color: white;
+
+    border: none;
+    outline: none;
+
+    cursor: pointer;
+}
+
+.menu__tab_active{
+    color: #E5261E;
+}
+
+.menu__tab_active:after{
+    position: absolute;
+    bottom: 0;
+    left:0;
+
+    content: '';
+    width: 100%;
+    height: 2px;
+
+    background: #E5261E;
+}
+
+/* movies */
+
+.movies{
+    width: 1180px;
+    margin: 29px auto 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.movies__title{
+    margin-bottom: 16px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #333333;
+}
+
+.fire_icon{
+    height: 24px;
+    width: 20px;
+    padding-top: 2px;
+}
+
+.movies__list{
+    list-style: none;
+
+    display: flex;
+}
+
+.movies-card{
+    position: relative;
+
+    width: 280px;
+    margin-right: 20px;
+}
+
+@media(min-width: 1200px) {
+    .movies-card:nth-child(4n){
+        margin-right: 0;
+    }
+}
+
+
+.movies-card__img{
+    border-radius: 8px;
+}
+
+.movies-card__title{
+    margin-top: 12px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #333333;
+}
+
+.movies-card__description{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 370px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #F2F2F2;
+    padding: 16px;
+
+    opacity: 0;
+    background: #333333;
+    border-radius: 8px;
+}
+
+.movies-card__description_a:hover > .movies-card__description{
+    opacity: 0.8;
+}
+
+/* genres */
+
+.genres{
+    width: 1180px;
+    margin: 32px auto 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.genres__title{
+    margin-bottom: 16px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #333333;
+}
+
+.genres__list{
+    list-style: none;
+
+    display: flex;
+}
+
+.genres-card{
+    width: 280px;
+    height: 208px;
+
+    position: relative;
+    margin-right: 20px;
+}
+
+@media(min-width: 1200px) {
+    .genres-card:nth-child(4n){
+        margin-right: 0;
+    }
+}
+
+.genres-card__background{
+    width: 280px;
+    height: 208px;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.genres-card_a:hover > .genres-card__background{
+    opacity: 1;
+}
+
+.genres-card__background_comedy{
+    background: linear-gradient(127.83deg, #F2C94C 8.44%, #F29A4A 91.36%);
+    opacity: 0.8;
+    box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+
+.genres-card__background_drama{
+    background: linear-gradient(127.83deg, #F2994A 8.44%, #EB5757 91.36%);
+    opacity: 0.8;
+    box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+
+.genres-card__background_fantasy{
+    background: linear-gradient(127.83deg, #56CCF2 8.44%, #2F80ED 91.36%);
+    opacity: 0.8;
+    box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+
+.genres-card__background_horror{
+    background: linear-gradient(127.83deg, #828282 8.44%, #333333 91.36%);
+    opacity: 0.8;
+    box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+}
+
+.genres-card__icon{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+
+    z-index: 3;
+}
+
+.genres-card__title{
+    position: absolute;
+    left:50%;
+    bottom:24px;
+    transform: translateX(-50%);
+    z-index: 3;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+    overflow: hidden;
+}
+
+.tv-schedule{
+    width: 1180px;
+    height: 696px;
+    margin:0 auto;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.tv-schedule__card{
+    width: 100%;
+
+    display: flex;
+
+    background: #F2F2F2;
+}
+
+.tv-schedule__card + .tv-schedule__card{
+    margin-top: 16px;
+}
+
+.program-logotype{
+    width: 400px;
+    height: 162px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.program-schedule__channel-title{
+    margin-top: 21px;
+    margin-bottom: 17px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.program-schedule__show-date{
+    height: 19px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.program-schedule__show-date + .program-schedule__show-date{
+    margin-top: 12px;
+}
+
+.program-schedule__show-date_time{
+    padding-right: 16px;
+}
+
+.program-schedule__show-date_first{
+    color: #E5261E;
+}
+/* footer */
+
+.footer{
+    min-width: 1180px;
+    height: 120px;
+
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right: 0;
+
+    background-color: #F2F2F2;
+}
+
+.footer-container{
+    width: 1180px;
+    height: 120px;
+
+    margin: 0 auto;
+    padding-top: 22px;
+
+    display: flex;
+}
+
+.footer__logo{
+    width: 33px;
+    height: 64px;
+
+    margin-top: 6px;
+}
+
+.footer-content{
+    margin-left: 40px;
+}
+
+.footer-content__info{
+    width: 940px;
+    height: 19px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+}
+
+.footer-content__info_address{
+    margin-bottom: 6px;
+}
+
+.footer-content__info_tel{
+    margin-bottom: 10px;
+}
+
+.footer-content__info_tel>a{
+    text-decoration: none;
+    color: #333333;
+}
+
+.footer-content__info_site>a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #1F4766;
+}
+
+/* custom scrollbar */
+
+.tv_schedule_container{
+    width: 1180px;
+    height: 696px;
+    margin: 27px auto 0;
+
+    position: relative;
+}
+
+.viewport-wrapper{
+    width: 1180px;
+    height: 696px;
+    position: relative;
+}
+
+.viewport{
+    width: 100%;
+    height: 696px;
+    position: absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+}
+
+.content {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.scrollbar, .scroller {
+    position: absolute;
+}
+
+.scrollbar {
+    top: 0;
+    width: 8px;
+    right: -14px;
+    bottom: 0;
+    background: #F2F2F2;
+    border-radius: 2px;
+}
+.scroller {
+    width: 4px;
+    left: 2px;
+    background: #BDBDBD;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.hidden {
+    display:none;
+}
+
+/* Modal window */
+
+.modal-window_wrapper{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+
+    background: rgba(51,51,51, 0.6);
+}
+
+.login-window{
+    width: 304px;
+    height: 394px;
+
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    background: #FFFFFF;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-window__title{
+    margin: 36px 0 24px 0;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    text-align: right;
+    color: #333333;
+}
+
+.login-window__input{
+    width: 232px;
+    height: 25px;
+    margin-bottom: 24px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #333333;
+
+    padding-bottom: 6px;
+}
+
+.login-window__input::placeholder {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #828282;
+}
+
+.login-window__input:focus{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+}
+
+.checkbox{
+    display: none;
+}
+
+.label{
+    display: flex;
+    align-items: center;
+}
+
+.text{
+    margin-left: 8px;
+}
+
+.login-window__checkbox{
+    margin-right:123px;
+    margin-bottom: 111px;
+
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333333;
+}
+
+.fake{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+}
+
+.fake::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 8px;
+    top:50%;
+    left:50%;
+    background-image: url("assets/checkbox.svg");
+    background-repeat: no-repeat;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.checkbox:checked + .fake::before{
+    opacity: 1;
+}
+
+.login-window__button{
+    width: 113px;
+    height: 38px;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    color: #FFFFFF;
+    background: #E5261E;
+    border-radius: 4px;
+}
+
+/* media */
+@media (min-width: 901px) and (max-width: 1200px){
+    .movies-card:nth-child(3n){
+        margin-right: 0;
+    }
+
+    .genres-card:nth-child(3n){
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1200px) {
+
+    .movies__list{
+        flex-wrap: wrap;
+
+    }
+
+    .movies{
+        width: 100%;
+        max-width: 880px;
+        min-width: 280px;
+    }
+
+    .movies-card__title{
+        margin-bottom: 10px;
+    }
+
+    .genres{
+        width: 100%;
+        max-width: 880px;
+        min-width: 280px;
+    }
+
+    .genres__list{
+        flex-wrap: wrap;
+    }
+
+    .genres-card{
+        margin-bottom: 20px;
+    }
+
+    .header{
+        width: 880px;
+        height: auto;
+
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .header-logo{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header-login{
+        margin-left: 0;
+    }
+
+    .header-search{
+        margin: 10px 0 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .header-username{
+        margin-left: 0px;
+    }
+
+    .header-username-input{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .footer{
+        width: 100%;
+        height: auto;
+        max-height: 150px;
+        min-width: 300px;
+    }
+
+    .footer-container{
+        width: 100%;
+        height: auto;
+        max-height: 150px;
+        min-width: 300px;
+    }
+
+    .footer-content__info{
+        width: 100%;
+        height: auto;
+    }
+
+    .tv_schedule_container{
+        width: 500px;
+    }
+    .viewport-wrapper{
+        width: 500px;
+    }
+    .program-logotype{
+        width: 0;
+        height: 0;
+    }
+
+    .tv-schedule{
+        width:100%;
+    }
+
+    .program-schedule{
+        width: 100%;
+    }
+
+    .program-schedule__show-date{
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space:  nowrap;
+    }
+
+    .program-schedule__show-date>span{
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .img{
+        width: 0;
+    }
+}
+
+@media (max-width: 900px){
+    .header{
+        width: 580px;
+    }
+
+    .movies{
+        max-width: 580px;
+    }
+
+    .movies-card:nth-child(2n){
+        margin-right: 0;
+    }
+
+    .genres{
+        width: 580px;
+    }
+
+    .genres-card:nth-child(2n){
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 600px){
+    .header{
+        width: 280px;
+    }
+
+    .movies{
+        max-width: 280px;
+        min-width: 280px;
+    }
+
+    .genres{
+        width: 280px;
+        min-width: 280px;
+    }
+
+    .tv_schedule_container{
+        width: 320px;
+    }
+    .viewport-wrapper{
+        width: 320px;
+    }
+}
+
+@media (max-width: 500px){
+
+    .header{
+        width: 100%;
+    }
+
+    .header-search__input{
+        width: 100px;
+    }
+    .header-username{
+        width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .header-username-input{
+        width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
