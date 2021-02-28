@@ -307,6 +307,8 @@ a{
     opacity: 0;
     background: #333333;
     border-radius: 8px;
+
+    overflow: hidden;
 }
 
 .movies-card__description_a:hover > .movies-card__description{

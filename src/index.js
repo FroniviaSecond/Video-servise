@@ -319,3 +319,38 @@ if (localStorage.checked == 'true'){
     username.innerHTML = localStorage.user;
 }
 
+
+/* */
+let intervalTextScrollDown;
+let timeoutTextScrollDown;
+let a = true;
+movies.addEventListener('mouseover', shiftText)
+
+function shiftText(event){
+    if (event.target.classList.contains('movies-card__description') ){
+        if (event.target.offsetHeight < event.target.scrollHeight){
+            intervalTextScrollDown = setInterval(function scrollText(){
+                event.target.scrollTop += 1;
+                let huy = event.target.scrollHeight - event.target.offsetHeight;
+                if (event.target.scrollTop == huy){
+                    console.log('они равны');
+                    clearInterval(intervalTextScrollDown);
+                    timeoutTextScrollDown = setTimeout(function(){
+                        event.target.scrollTop = 0;
+                        intervalTextScrollDown = setInterval(scrollText,90)
+                    }, 1000)
+                }
+            }, 90)
+        }
+    }
+}
+
+movies.addEventListener('mouseout', unshiftText);
+
+function unshiftText(event){
+    if (event.target.classList.contains('movies-card__description') ){
+        clearTimeout(timeoutTextScrollDown);
+        clearInterval(intervalTextScrollDown)
+    }
+}
+
