@@ -467,6 +467,7 @@ a{
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
+    width: max-content;
 }
 
 .program-schedule__show-date + .program-schedule__show-date{
@@ -862,7 +863,6 @@ a{
     .program-schedule__show-date{
         max-width: 100%;
         overflow: hidden;
-        text-overflow: ellipsis;
         white-space:  nowrap;
     }
 

@@ -14,7 +14,7 @@ const username = document.querySelector('.header-username')
 const usernameInput = document.querySelector('.header-username-input')
 const checkbox = document.querySelector('.checkbox');
 let url = 'http://localhost:3000/users'
-
+const tvScheduleCard = document.querySelector('.tv-schedule');
 
 // Создаем модальное окно при клике на кнопку войти
 loginButton.addEventListener('click', () => {modalWindow.classList.remove('hidden')})
@@ -323,16 +323,14 @@ if (localStorage.checked == 'true'){
 /* */
 let intervalTextScrollDown;
 let timeoutTextScrollDown;
-let a = true;
 movies.addEventListener('mouseover', shiftText)
 
 function shiftText(event){
-    if (event.target.classList.contains('movies-card__description') ){
-        if (event.target.offsetHeight < event.target.scrollHeight){
+    if (event.target.classList.contains('movies-card__description') && event.target.offsetHeight < event.target.scrollHeight ){
             intervalTextScrollDown = setInterval(function scrollText(){
                 event.target.scrollTop += 1;
-                let huy = event.target.scrollHeight - event.target.offsetHeight;
-                if (event.target.scrollTop == huy){
+                let width = event.target.scrollHeight - event.target.offsetHeight;
+                if (event.target.scrollTop == width){
                     console.log('они равны');
                     clearInterval(intervalTextScrollDown);
                     timeoutTextScrollDown = setTimeout(function(){
@@ -341,7 +339,6 @@ function shiftText(event){
                     }, 1000)
                 }
             }, 90)
-        }
     }
 }
 
@@ -354,3 +351,45 @@ function unshiftText(event){
     }
 }
 
+/* tv */
+let intervalTextScrollRight;
+
+tvScheduleCard.addEventListener('mouseover', shiftHorizontalText)
+
+function shiftHorizontalText(event){
+    if (event.target.tagName === 'SPAN'){
+        pieceOfShit(event)
+    }
+}
+
+tvScheduleCard.addEventListener('mouseout', unshiftHorizontalText)
+
+function unshiftHorizontalText(event){
+    if (event.target.tagName === 'SPAN'){
+        clearInterval(intervalTextScrollRight)
+        let a = event.target.closest('p');
+        a.scrollLeft = 0;
+    }
+}
+
+function pieceOfShit(event){
+    let a = event.target.closest('p');
+    let b = true
+
+    if (a.offsetWidth < a.scrollWidth){
+        intervalTextScrollRight = setInterval(function scrollTextRight(){
+            if (b == true){
+                a.scrollLeft += 2;
+                console.log(a.scrollLeft)
+                if (a.scrollLeft + a.offsetWidth === a.scrollWidth){
+                    b = false;
+                }
+            } else {
+                a.scrollLeft -= 2;
+                if (a.scrollLeft === 0) {
+                    b = true;
+                }
+            }
+        }, 90);
+    }
+}
